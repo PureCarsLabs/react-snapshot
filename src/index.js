@@ -6,6 +6,6 @@ export const render = (rootComponent, domElement) => {
     domElement.innerHTML = ReactDOMServer.renderToString(rootComponent)
     window.reactSnapshotRender()
   } else {
-    ReactDOM.createRoot(domElement).render(rootComponent)
+    ReactDOM.createRoot(domElement, { hydrate: true }).render(rootComponent)
   }
 }
